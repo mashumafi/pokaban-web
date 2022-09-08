@@ -1,0 +1,4 @@
+baseURL = 'http://pokaban.com/'
+languageCode = 'en-us'
+title = 'Pokaban'
+theme = 'ananke'

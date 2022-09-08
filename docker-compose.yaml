@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+
+  hugo:
+    image: klakegg/hugo:busybox
+    volumes:
+      - .:/workdir
+    command: --help
+    working_dir: /workdir
+    ports:
+      - 1313:1313
