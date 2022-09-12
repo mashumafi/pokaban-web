@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <section class="hero is-halfheight has-bg-img">
-            <div class="hero-body">
-              <div class="">
+{{- partial "head.html" . -}}
+
+<body>
+    {{- partial "header.html" . -}}
+    <section class="hero is-halfheight has-bg-img">
+        <div class="hero-body">
+            <div class="">
                 <p class="title">
                 </p>
                 <p class="subtitle">
                 </p>
-              </div>
             </div>
-          </section>
-          <section class="section">
-            <h1 class="title">About</h1>
-            <h2 class="subtitle">
+        </div>
+    </section>
+    <section class="section">
+        <h1 class="title">About</h1>
+        <h2 class="subtitle">
+            <p>
                 A poker puzzle game coming to Steam.
                 Push cards to create the perfect poker hand.
-              <button class="button">
+            </p>
+            <a class="button" href="http://s.team/a/1937170?utm_source=website&utm_campaign=about">
                 <span class="icon">
-                  <i class="fab fa-steam"></i>
+                    <i class="fab fa-steam"></i>
                 </span>
                 <span>Wishlist</span>
-              </button>
-            </h2>
-          </section>
-        {{- partial "footer.html" . -}}
-    </body>
+            </a>
+        </h2>
+    </section>
+
+    {{ if .Site.Data.tutorial }}
+    {{ range sort .Site.Data.tutorial "weight" }}
+    <section class="section">
+        <h1 class="title">{{ .name }}</h1>
+        <h2 class="subtitle">
+            {{ .url }}
+        </h2>
+    </section>
+    {{ end }}
+    {{ else }}
+    No tutorial...
+    {{ end }}
+
+    {{- partial "footer.html" . -}}
+</body>
+
 </html>

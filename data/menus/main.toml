@@ -1,0 +1,19 @@
+[home]
+content = "Home"
+href = "/"
+weight = 1
+
+[wishlist]
+content = "Wishlist"
+href = "http://s.team/a/1937170?utm_source=website&utm_campaign=nav"
+weight = 2
+
+[presskit]
+content = "Press Kit"
+href = "/"
+weight = 3
+
+[contact]
+content = "Contact"
+href = "/"
+weight = 4
