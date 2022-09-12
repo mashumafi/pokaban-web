@@ -1,4 +1,4 @@
 baseURL = 'https://mashumafi.github.io/pokaban-web'
 languageCode = 'en-us'
 title = 'Pokaban'
-theme = 'ananke'
+theme = 'pokaban'
