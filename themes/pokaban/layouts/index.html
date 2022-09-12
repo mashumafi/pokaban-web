@@ -30,18 +30,19 @@
         </h2>
     </section>
 
-    {{ if .Site.Data.tutorial }}
-    {{ range sort .Site.Data.tutorial "weight" }}
     <section class="section">
-        <h1 class="title">{{ .name }}</h1>
+        <h1 class="title">How to play</h1>
         <h2 class="subtitle">
-            {{ .url }}
+            <div class="columns is-multiline">
+                {{ range sort .Site.Data.tutorial "weight" }}
+                <div class="column is-one-third">
+                    <h3>{{ .content }}</h3>
+                    <img src="{{ .image }}">
+                </div>
+                {{ end }}
+            </div>
         </h2>
     </section>
-    {{ end }}
-    {{ else }}
-    No tutorial...
-    {{ end }}
 
     {{- partial "footer.html" . -}}
 </body>
