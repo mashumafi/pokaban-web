@@ -1,6 +1,7 @@
 [home]
 content = "Home"
 href = "/"
+baseURL = true
 weight = 1
 
 [wishlist]
@@ -10,10 +11,11 @@ weight = 2
 
 [presskit]
 content = "Press Kit"
-href = "/"
+href = "/press-kit"
+baseURL = true
 weight = 3
 
 [contact]
 content = "Contact"
-href = "/"
+href = "mailto: support@pokaban.com"
 weight = 4

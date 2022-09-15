@@ -1,16 +1,23 @@
 <nav class="navbar is-success" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="{{ .Site.BaseURL }}">
-      <img src="img/navbar-brand.png" width="224" height="22">
+      <img src="{{ .Site.BaseURL }}/img/navbar-brand.png" width="224" height="22">
     </a>
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
+      {{ $Site := .Site }}
       {{ range sort .Site.Data.menus.main "weight" }}
+      {{ if hasPrefix .href "/" }}
+      <a href="{{ $Site.BaseURL }}{{ .href }}" class="navbar-item">
+        {{ .content }}
+      </a>
+      {{ else }}
       <a href="{{ .href }}" class="navbar-item">
         {{ .content }}
       </a>
+      {{ end }}
       {{ end }}
     </div>
 
