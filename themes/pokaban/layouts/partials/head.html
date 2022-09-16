@@ -5,5 +5,6 @@
     {{ $style := $sass | resources.ToCSS | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
 
+    <link rel="icon" type="image/x-icon" href="{{ .Site.BaseURL }}/img/icon.ico">
     <title>{{ .Site.Title }}</title>
 </head>
