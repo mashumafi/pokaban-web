@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-            {{ .Content }}
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
+{{- partial "head.html" . -}}
+
+<body>
+    {{- partial "header.html" . -}}
+    <section class="section">
+        {{ .Content }}
+    </section>
+
+    <section class="section">
+        <h1 class="title">Details</h1>
+        <h2 class="subtitle">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Answer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ range sort .Site.Data.facts "weight" }}
+                    <tr>
+                        <td class="has-text-weight-bold">{{ .key }}</td>
+                        <td>{{ .value }}</td>
+                    </tr>
+                    {{ end }}
+                </tbody>
+            </table>
+        </h2>
+    </section>
+
+    {{- partial "features.html" . -}}
+
+    {{- partial "footer.html" . -}}
+</body>
+
 </html>

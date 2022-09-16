@@ -1,0 +1,24 @@
+<section class="section">
+    <h1 class="title">Features</h1>
+    <h2 class="subtitle">
+        <div class="columns is-multiline">
+            {{ $Site := .Site }}
+            {{ range sort .Site.Data.features "weight" }}
+            <div class="column is-one-third">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header-title">
+                            {{ .content }}
+                        </div>
+                    </div>
+                    <div class="card-image">
+                        <figure class="image is-16by9">
+                            <img src="{{ $Site.BaseURL }}{{ .image }}">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </h2>
+</section>
