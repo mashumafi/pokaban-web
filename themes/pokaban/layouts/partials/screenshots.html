@@ -1,0 +1,15 @@
+<section class="section">
+    <h1 class="title">Screenshots</h1>
+    <h2 class="subtitle">
+        <div class="columns is-multiline">
+            {{ $Site := .Site }}
+            {{ range sort .Site.Data.screenshots "weight" }}
+            <div class="column is-one-third">
+                <figure class="image is-16by9">
+                    <img src="{{ $Site.BaseURL }}{{ .image }}">
+                </figure>
+            </div>
+            {{ end }}
+        </div>
+    </h2>
+</section>
